@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+:root{
+    --linkActive: rgb(255, 0, 191);
+    --linkHover: rgb(255, 108, 218);
+    --backgroundItems: rgb(245, 245, 26);
+}
+*{
+    font-family: 'Lato', sans-serif;  
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+body{
+    background-color: rgb(180, 178, 250);
+}
+
+header{
+    background:  darkblue;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.links{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.links a + a{
+    color: white;
+    margin-left: 32px;
+}
+
+.links a{
+    color: white;
+    position: relative;
+}
+
+.links a.active{
+    font-weight: 900;
+    color: var(--linkActive);
+}
+
+.links a:hover{
+    color: var(--linkHover);
+    transition: 200ms;
+}
+
+.links a::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background: var(--linkHover);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.links a:hover::after{
+    width: 100%;
+    transition: width 300ms ease-in-out;
+}
+
+/*CARD*/
+.card{
+    background: white;
+    width: 100vh;
+    height: 100vh;
+    
+    margin: 5vh auto;
+    /* grid */
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    /*sombra*/
+    box-shadow: 0 4px 8px 0px rgba(0,0,0, 0.3);
+
+    /*animation*/
+    animation: up;
+    animation-duration: 200ms;
+    animation-timing-function: ease;
+
+}
+
+
+.avatar{
+    max-height: 100vh;
+}
+
+@keyframes up {
+    from{
+        opacity: 0;
+        transform: translate(10px);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* DETAILS */
+
+.details{
+    padding: 10% 20%;
+    box-sizing: content-box;
+    height: 100vh;
+}
+
+.details .item{
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+    padding: 12px 0;
+}
+
+.details .item:last-child{
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1){
+    color:rgb(153, 152, 152);
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    letter-spacing: 0.12rem;
+}
+
+.details .item div:nth-child(2){
+    color:rgb(102, 102, 102);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.details h3{
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--linkActive)
+}
+
+
+.details .item div:nth-child(2) span{
+    padding: 8px 16px;
+    background-color: var(--backgroundItems);
+    border-radius: 16px;
+    color: #777;
+    margin-right: 4px;
+    margin-top: 8px;
+    
+
+    /* esse display é para o span obedecer o espaçamento do margin-top*/
+    display: inline-block;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+}
+
+/* FORM */
+
+input{
+    width: 100%;
+    outline: none;
+    color:rgb(102, 102, 102);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input[type="date"]{
+    font-size: 0.8rem;
+}
+
+select{
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Para ignorar as configurações feitas depois*/
+input[type="radio"]{
+    width: initial;
+    margin-right: 4px;
+    height: 8px;
+}
+
+input::placeholder{
+    font-size: 0.6rem;
+    font-weight: normal;
+}
+
+.button,
+button[type="submit"]{
+    padding: 8px 16px;
+    background-color: var(--linkActive);
+    color: white;
+    border-radius: 4px;
+    margin-top: 8px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.0rem;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 4px;
+}
+
+
+
+#deletar, 
+#cancelar{
+    background-color: rgb(250, 85, 85);
+    margin-top: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+    
+}
+
+.grid-button{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5%;
+    grid-gap: 5%;
+}
+
+/* RESPONSIVE */
+
+
+@media (max-width: 600px) {
+    .card{
+        width: 60vh;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .avatar{
+        min-height: 50vh;
+    }
+   
+    .details{
+        padding: 10% 10%;
+        height: 100%;
+        
+    }
+    input[type="date"]{
+        font-size: 0.6rem;
+    }
+    .grid-button{
+        display: grid;
+        grid-template-columns: repeat (auto-fit, minmax(5px, 1fr));
+        margin-top: 5%;
+    }
+}
+
+
+
