@@ -3,6 +3,11 @@ const data = require('./data.json')
 const { age, date, graduation, classType } = require('./functions')
 const Intl = require('intl') //npm i intl
 
+
+exports.indexTeachers = function(req, res){
+    return res.render('teachers/index', { teachers: data.teachers })
+}
+
 //buscar teacher/show
 exports.findTeachers = function(req, res){
     //req.params teachers/id
@@ -105,7 +110,8 @@ exports.putTeachers = function(req, res){
     const teacher = {
         ...foundTeacher,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }
 
     data.teachers[index] = teacher

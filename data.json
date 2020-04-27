@@ -1,17 +1,17 @@
 {
   "teachers": [
     {
-      "id": "1",
+      "id": 1,
       "avatar_url": "https://www.designerd.com.br/wp-content/uploads/2018/05/mulher-maravilha-novo-uniforme.jpg",
-      "name": "Roberta Aguilar",
+      "name": "Roberta Ferreira Aguilar",
       "birth": 523756800000,
       "selectDegree": "Master",
       "classType": "D",
-      "services": "Matemática, Ciências, Biologia",
+      "services": "Matemática, Ciências, Biologia, Geografia",
       "created_at": 1587494181881
     },
     {
-      "id": "2",
+      "id": 2,
       "avatar_url": "https://rollingstone.uol.com.br/media/_versions/chris_evans__-capitao_america_-_reproducao_widelg.jpg",
       "name": "Vanessa Slompo",
       "birth": 437443200000,

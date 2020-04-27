@@ -4,6 +4,7 @@
             <input 
                 type="url" 
                 name="avatar_url"
+                class="text-fields"
                 placeholder="http://"
                 value="{{ teacher.avatar_url }}">
             </div>
@@ -15,6 +16,7 @@
             <input 
                 type="text"
                 name="name" placeholder="Digite o nome completo"
+                class="text-fields"
                 value = "{{ teacher.name }}">
             </div>
         </div>
@@ -78,7 +80,7 @@
 
          <div class="item">
             <div>Tipo de aula</div>
-            <div>
+            <div class="classType">
                 <span>
                     <input 
                         type="radio" 
@@ -106,6 +108,7 @@
             <div>
                 <input 
                     type="text" 
+                    class="text-fields"
                     name="services" 
                     placeholder="Separe por vírgula"
                     value="{{ teacher.services }}">
