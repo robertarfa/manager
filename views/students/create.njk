@@ -2,20 +2,20 @@
 
 {% block content %}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<form class="card" method="POST" action="/teachers">
+<form class="card" method="POST" action="/students">
     <section class="avatar" style="background: url(https://source.unsplash.com/collection/9881186/500x500) no-repeat center center / cover"></section>
     
     <section class="details">
         
-        <h3>Novo Professor</h3>
+        <h3>Novo Aluno</h3>
 
-        {% include 'teachers/fields.njk' %}
+        {% include 'students/fields.njk' %}
 
-          <div class="grid-button">
+        <div class="grid-button">
             <button type="Submit">Salvar</button>
-            <a href="/teachers/{{ teacher.id }}" id="cancelar" class="button">Cancelar</a>
+            <a href="/students/{{ student.id }}" id="cancelar" class="button">Cancelar</a>
         </div>
-        
+
     </section>
 </form>
 

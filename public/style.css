@@ -185,7 +185,8 @@ select{
 /* Para ignorar as configurações feitas depois*/
 input[type="radio"]{
     width: initial;
-    height: 10px;
+    height: 100%;
+    margin-right: 2%;
 }
 
 input::placeholder{
@@ -236,23 +237,26 @@ button[type="submit"]{
 
 .table-container table{
     border-spacing: 0;
+    table-layout: auto;
 }
 
 .table-container thead tr th {
     text-align: left;
+    box-sizing: border-box;
 }
 
 .table-container td {
     padding: 8px;
-    height: 15vh;
+    height: 50px;
     border-bottom: 1px solid #d9d9d9;
 }
 
 .table-container th {
-    padding: 2% 5%;
+    padding: 2%;
     text-transform: uppercase;
     font-weight: 900;
     color: #777;
+    box-sizing: border-box;
 }
 
 tbody tr:first-child td{
@@ -266,10 +270,26 @@ tbody tr:last-child td{
 thead tr th:last-child,
 tbody tr td:last-child{
     text-align: center;
-    width: 2vw;
 }
 
-tbody tr td:last-child a{
+tbody tr td:first-child{
+    display: grid;
+    grid-template-columns: 64px 20vw;
+    align-items: center;
+}
+
+tbody tr td:first-child span{
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid white;
+}
+
+tbody tr td:last-child a,
+.table-container > a{
     padding: 8px 16px;
     background-color: var(--linkActive);
     color: white;
@@ -282,38 +302,20 @@ tbody tr td:last-child a{
     text-transform: uppercase;
 }
 
-
-tbody tr td:first-child{
-    display: grid;
-    grid-template-columns: 64px 20vw;
-    align-items: center;
-}
-
-
-tbody tr td:first-child span{
-    width: 40px;
-    height: 40px;
-    background-position: center;
-    background-size: cover;
-    border-radius: 50%;
-    box-shadow: 3px 1px 6px -4px black;
-    border: 2px solid white;
+.table-container > a{
+    margin: 0 0 0 2%;
+    display: inline-block;
 }
 
 /* RESPONSIVE */
 
 
 
-@media (max-width: 1920px) {  
-    .details{
-        padding: 10% 10%;
-        height: 100%;    
+@media (max-width: 1024px){
+    .card{
+        width: 100vh;
+        height: 100%;
     }
-    .area{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-  
 }
 
 @media (max-width: 768px) {
@@ -333,43 +335,65 @@ tbody tr td:first-child span{
         display: inline-block;
         width: 80%;
     }
-}
-
-@media (max-width: 600px) {
-    .card{
-        width: 70vh;
-        height: 100%;
+    .area{
         display: grid;
         grid-template-columns: 1fr;
     }
-    .avatar{
-        min-height: 40vh;
-    }
-   
-    .details{
-        padding: 10% 10%;
-        height: 100%;
-        
-    }
-    input[type="date"]{
-        font-size: 0.6rem;
+
+    .table-container{
+        width: 60vw;
     }
 
-    .details .item div:nth-child(2) span{
-        margin-right: 5%;
-        width: 100px;
-        text-align: center;
+    .table-container th {
+        padding: 5%;
     }
 
-    .grid-button{
-        display: grid;
-        grid-template-columns: repeat (auto-fit, minmax(5px, 1fr));
-        margin-top: 5%;
+    tbody tr:first-child{
+        border-top: 1px solid var(--linkActive);
     }
-   
+
+    thead th:nth-last-child(2),
+    thead th:nth-last-child(1){
+        display: none;
+      }
+
+      .table-container td {
+
+        border-bottom: none;
+      }
+
+        tbody tr:first-child td{
+            border-top: none;
+        }
+    
+      td, tr {
+        display: block;
+        border-bottom: 1px solid #d9d9d9;
+      }
+
+      tbody tr:last-child{
+        border-bottom: none;
+    }
+
+      td{
+         margin-bottom: 10px;
+      }
+
+
+    tbody tr{
+        position: relative;
+    }
+
+    tbody td:last-child {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+    }
+    
 }
 
-@media (max-width: 420px) {
+
+@media (max-width: 425px) {
     *{
         font-size: 16px;
     }
@@ -378,11 +402,6 @@ tbody tr td:first-child span{
         height: 100%;
         display: grid;
         grid-template-columns: 1fr;
-    }
-    
-    .area{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
     }
     .details .item div:nth-child(2) span{
        
@@ -393,19 +412,10 @@ tbody tr td:first-child span{
     .classType{
         display: inline-block;
         width: 150px;
-    }
-  
+    } 
 }
 
-@media (max-width: 380px) {
-  
-    .card{
-        width: 40vh;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-    
+@media (max-width: 380px) {   
    .area{
        margin-left: -8px;
    }

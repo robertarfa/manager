@@ -1,29 +1,40 @@
 {
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://i.pinimg.com/originals/fb/32/8f/fb328f8b800f8549b7b3ebe7790bd7cd.jpg",
+      "name": "Senhor Destino",
+      "email": "senhordestino@email.com",
+      "birth": 1281139200000,
+      "selectYear": "8AF",
+      "hours": "30"
+    }
+  ],
   "teachers": [
     {
       "id": 1,
       "avatar_url": "https://www.designerd.com.br/wp-content/uploads/2018/05/mulher-maravilha-novo-uniforme.jpg",
-      "name": "Roberta Ferreira Aguilar",
+      "name": "Mulher Maravilha",
       "birth": 523756800000,
       "selectDegree": "Master",
       "classType": "D",
-      "services": "Matemática, Ciências, Biologia, Geografia",
+      "services": "Matemática, Ciências, Biologia",
       "created_at": 1587494181881
     },
     {
       "id": 2,
       "avatar_url": "https://rollingstone.uol.com.br/media/_versions/chris_evans__-capitao_america_-_reproducao_widelg.jpg",
-      "name": "Vanessa Slompo",
+      "name": "Capitão América",
       "birth": 437443200000,
       "selectDegree": "ESC",
       "classType": "D",
-      "services": "Programação, Scrum Master, JavaScript, Matemática, Geografia",
+      "services": "Programação, Scrum Master",
       "created_at": 1587659019887
     },
     {
       "id": 3,
       "avatar_url": "https://img.redbull.com/images/c_crop,x_104,y_0,h_720,w_1080/c_fill,w_1500,h_1000/q_auto,f_auto/redbullcom/2019/03/01/53200cdd-642d-4d86-862d-d4ac4e849135/tudo-sobre-capita-marvel-filme-vingadores-01",
-      "name": "Renata Aguilar",
+      "name": "Capitã Marvel",
       "birth": 332726400000,
       "selectDegree": "EMC",
       "classType": "P",

@@ -1,6 +1,6 @@
 const fs = require('fs')
-const data = require('./data.json')
-const { age, date, graduation, classType } = require('./functions')
+const data = require('../data.json')
+const { age, date, graduation, classType } = require('../functions')
 const Intl = require('intl') //npm i intl
 
 
@@ -8,7 +8,12 @@ exports.indexTeachers = function(req, res){
     return res.render('teachers/index', { teachers: data.teachers })
 }
 
-//buscar teacher/show
+//create
+exports.createTeachers = function(req, res){
+    return res.render('teachers/create')
+}
+
+//buscar/show
 exports.findTeachers = function(req, res){
     //req.params teachers/id
     const { id } = req.params
@@ -33,7 +38,7 @@ exports.findTeachers = function(req, res){
     return res.render('teachers/show', { teacher })
 }
 
-//create
+//post
 exports.postTeachers = function(req, res){
     
     const keys = Object.keys(req.body)
@@ -87,7 +92,7 @@ exports.editTeachers = function(req, res){
 
     const teacher = {
         ...foundTeacher,
-        birth: date(foundTeacher.birth)
+        birth: date(foundTeacher.birth).iso
     }
 
     return res.render('teachers/edit', {teacher})

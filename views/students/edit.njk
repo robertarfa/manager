@@ -9,25 +9,23 @@
         
         <section class="details">
             
-            <h3>Editar Professor</h3>
+            <h3>Editar Aluno</h3>
 
-        <form method="POST" action="/teachers?_method=PUT">
-        {% include 'teachers/fields.njk' %}
+        <form method="POST" action="/students?_method=PUT">
+        {% include 'students/fields.njk' %}
 
             <input 
                 type="hidden"
                 name="id"
-                value={{ teacher.id }}
+                value={{ student.id }}
                 >
 
-            <div class="grid-button">
+              <div class="grid-button">
                 <button type="Submit">Salvar</button>
-                <a href="/teachers/{{ teacher.id }}" id="cancelar" class="button">Cancelar</a>
+                <a href="/students/{{ student.id }}" id="cancelar" class="button">Cancelar</a>
             </div>
-
         </form>
-    
- 
+
 
         </section>
 
