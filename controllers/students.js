@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { date } = require('../functions')
+const { date, schollYear } = require('../functions')
 const Intl = require('intl') //npm i intl
 
 
@@ -8,7 +8,7 @@ exports.indexStudents = function(req, res){
     return res.render('students/index', { students: data.students })
 }
 
-//buscar student/show
+//buscar student/show/get
 exports.findStudents = function(req, res){
     //req.params students/id
     const { id } = req.params
@@ -23,10 +23,7 @@ exports.findStudents = function(req, res){
     const student = {
         ...foundStudent,
         birth: date(foundStudent.birth).birthDay,
-        //selectDegree: graduation(foundStudent.selectDegree),
-        
-        //Para separar o array Matemática, Ciências
-        
+        selectYear: schollYear(foundStudent.selectYear)
     }
     
     return res.render('students/show', { student })

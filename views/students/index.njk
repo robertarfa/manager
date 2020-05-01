@@ -10,7 +10,8 @@
             <thead>
                 <tr>
                     <th>Alunos</th>
-                    <th>Área de atuação</th>
+                    <th>Email</th>
+                    <th>Ano escolar</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -19,10 +20,11 @@
                 {% for student in students %}
                     <tr>
                         <td>
-                            <span style="background: url( '{{ student.avatar_url }}' )"></span>
+                            <span style="background: url( '{{ student.avatar_url }}' ) center top no-repeat; background-size: 100% 100%"></span>
                             {{ student.name }}
                         </td>
-                        <td>{{ student.services }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.selectYear }}</td>
                         <td><a href="/students/{{ student.id }}"> Ver</a></td>
                     </tr>
                 {% endfor %}

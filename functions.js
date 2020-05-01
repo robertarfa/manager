@@ -51,5 +51,17 @@ module.exports= {
         } else {
             return "Presencial"
         }
+    },
+    schollYear:
+    function schollYear (value){
+        switch(value) {
+            case '5AF': return "5º Ano Fundamental"
+            case '6AF': return "6º Ano Fundamental"
+            case '7AF': return "7º Ano Fundamental"
+            case '8AF': return "8º Ano Fundamental"
+            case '1AF': return "1º Ano Ensino médio"
+            case '2AF': return "2º Ano Ensino médio"
+            case '3AF': return "3º Ano Ensino médio"
+       }
     }
 }
